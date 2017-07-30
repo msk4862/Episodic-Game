@@ -51,6 +51,7 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:background="@drawable/episode_button"
+        android:textColor="#000"
         android:text="Play" />
 
 </RelativeLayout>

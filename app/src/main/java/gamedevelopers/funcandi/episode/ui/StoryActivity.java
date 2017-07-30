@@ -16,7 +16,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import gamedevelopers.funcandi.episode.PlayAgainActivity;
 import gamedevelopers.funcandi.episode.model.Page;
 import gamedevelopers.funcandi.episode.model.Story;
 import gamedevelopers.funcandi.episode.R;
@@ -35,13 +37,15 @@ public class StoryActivity extends AppCompatActivity{
     private Story story;
     private ImageView  character;
     private ConstraintLayout c;
-    private TextView storyTextView;
+    private TextView storyTextView, lesson;
     private Button choice1Button;
     private Button choice2Button;
     private Stack<Integer> pageStack = new Stack<Integer>();
 
     int x, y,diaCount=1;
     String[] pageText;
+    String[] lessons;
+    int l=0;
 
     Typeface t;
 
@@ -49,7 +53,7 @@ public class StoryActivity extends AppCompatActivity{
 
     private long animDuration = 1000;
 
-    Intent i;
+    Intent i, i1;
     Context context;
 
     @Override
@@ -60,20 +64,27 @@ public class StoryActivity extends AppCompatActivity{
         context=getApplicationContext();
 
         i= new Intent(context.getApplicationContext(), EndActivity.class);
-
+        i1= new Intent(context.getApplicationContext(), PlayAgainActivity.class);
 
         x=getResources().getDisplayMetrics().widthPixels;
         y=getResources().getDisplayMetrics().heightPixels;
 
         t = Typeface.createFromAsset(getAssets(), "raleway.ttf");
 
+        lessons = new String[3];
+        lessons[0]="Lesson Learnt: Be clean! Be healthy!";
+        lessons[1]="Lesson Learnt: Always choose wisely";
+        lessons[2]="Lesson Learnt: Honesty is the best policy";
+
         choice1Button = (Button) findViewById(R.id.choice1Button);
         choice2Button = (Button) findViewById((R.id.choice2Button));
         storyTextView = (TextView) findViewById(R.id.textView);
+        lesson = (TextView) findViewById(R.id.textView2);
         character = (ImageView) findViewById(R.id.imageView);
         c = (ConstraintLayout) findViewById(R.id.layout);
 
         storyTextView.setTypeface(t);
+        lesson.setTypeface(t);
         choice1Button.setTypeface(t);
         choice2Button.setTypeface(t);
 
@@ -89,6 +100,7 @@ public class StoryActivity extends AppCompatActivity{
         Log.d(TAG, name);
 
 
+        lesson.setVisibility(View.INVISIBLE);
         story = new Story(name, context);
         loadPage(0);
 
@@ -129,7 +141,7 @@ public class StoryActivity extends AppCompatActivity{
         else {
 
             if (page.getIsBuddy()==1){
-                character.setY(y/12);
+                character.setY(y/3);
             }
             else {
                 character.setY(y/3);
@@ -164,6 +176,8 @@ public class StoryActivity extends AppCompatActivity{
 
         pageText = page.getDialo();
         //storyTextView.setTextSize(x/70);
+        lesson.setTextColor(Color.WHITE);
+        lesson.setY(30);
         storyTextView.setTextColor(Color.WHITE);
         //storyTextView.setAlpha(0.7f);
 
@@ -175,17 +189,19 @@ public class StoryActivity extends AppCompatActivity{
 
         if (page.isFinalPage()) {
             choice1Button.setVisibility(View.INVISIBLE);
-            choice2Button.setText(R.string.play_again_button_text);
+            choice2Button.setText("NEXT");
             choice2Button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    loadPage(0);
+                    callPlayAgainActivity();
+                   // loadPage(0);
                 }
             });
         }
         else {
             loadButtons(page);
         }
+
     }
 
     private void loadButtons(final Page page) {
@@ -207,6 +223,7 @@ public class StoryActivity extends AppCompatActivity{
         }
         else if (page.getChoice1().getCh().equals("NEXT")) {
 
+            //lesson.setVisibility(View.INVISIBLE);
 
             choice1Button.setVisibility(View.INVISIBLE);
             choice2Button.setText("NEXT");
@@ -215,6 +232,7 @@ public class StoryActivity extends AppCompatActivity{
                 @Override
                 public void onClick(View v) {
                     int nextPage = page.getChoice1().getNextPage();
+                    lesson.setVisibility(View.INVISIBLE);
                     loadPage(nextPage);
                 }
             });
@@ -227,6 +245,17 @@ public class StoryActivity extends AppCompatActivity{
                     @Override
                     public void onClick(View v) {
                         int nextPage = page.getChoice1().getNextPage();
+                        lesson.setVisibility(View.VISIBLE);
+
+                        if (nextPage==12) {
+                            lesson.setText(lessons[0]);
+                        }
+                        if (nextPage==38) {
+                            lesson.setText(lessons[1]);
+                        }
+                        if (nextPage==33) {
+                            lesson.setText(lessons[2]);
+                        }
                         loadPage(nextPage);
                     }
                 });
@@ -316,6 +345,12 @@ public class StoryActivity extends AppCompatActivity{
 
         // i.putExtra("score", score);
         context.getApplicationContext().startActivity(i);
+    }
+
+    public void callPlayAgainActivity() {
+
+        // i.putExtra("score", score);
+        context.getApplicationContext().startActivity(i1);
     }
 
 }

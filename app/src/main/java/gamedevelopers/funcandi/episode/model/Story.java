@@ -99,7 +99,7 @@ public class Story {
         dialo[0]="What should I do now?";
 
         pages[8] = new Page(true, 1, R.drawable.episode_bathroom, R.drawable.episode_thinkingboy,
-                dialo, new Choice("Listen to Mr. Candy and take shower.", 12), new Choice("Ignore Mr. Candy's advice and eat the breakfast.", 9), false);
+                dialo, new Choice("Listen to Miss. Candy and take shower.", 12), new Choice("Ignore Miss. Candy's advice and eat the breakfast.", 9), false);
 
         //End for analysis part
         //*******************  END  *****************
@@ -110,7 +110,7 @@ public class Story {
             dialo = new String[3];
             dialo[0] = "I know what is good for me...";
             dialo[1] = "I don't need your advice!!!";
-            dialo[2] = "Mr. Candy!!!!";
+            dialo[2] = "Miss. Candy!!!!";
 
             pages[9] = new Page(1, R.drawable.episode_bathroom, R.drawable.episode_angryboy,
                     dialo, new Choice("NEXT", 10), new Choice("NEXT", 10), false);
@@ -158,7 +158,7 @@ public class Story {
             dialo[3] = "  and then my friends will make fun of me…";
             dialo[4] = "  What should I do now...?";
             pages[16] = new Page(true, 1, R.drawable.episode_outside, R.drawable.episode_thinkingboy,
-                    dialo, new Choice("Get on the bus", 17), new Choice("Go back and get your assignment", 38), false);
+                    dialo, new Choice("Go back and get your assignment", 38), new Choice("Get on the bus", 17), false);
 
 
             dialo = new String[1];
@@ -204,7 +204,7 @@ public class Story {
             dialo[0] = "  Hmmm...";
             dialo[1] = "  I think I should….";
             pages[23] = new Page(true, 1, R.drawable.episode_school, R.drawable.episode_thinkingboy,
-                    dialo, new Choice("Copy Zack’s assignment", 25), new Choice("Say truth to teacher", 33), false);
+                    dialo, new Choice("Say truth to teacher", 33), new Choice("Copy Zack’s assignment", 25), false);
 
 
         /*dialo = new String[2];
@@ -215,7 +215,7 @@ public class Story {
 
 
             dialo = new String[3];
-            dialo[0] = "I said you Buddy don’t interfere in my matters!!!";
+            dialo[0] = "I said you Miss. Candy don’t interfere in my matters!!!";
             dialo[1] = "I'll do what I want!!!";
             dialo[2] = "I will copy Zack’s assignment!!!";
             pages[25] = new Page(1, R.drawable.episode_school, R.drawable.episode_angryboy,
@@ -254,13 +254,13 @@ public class Story {
 
 
             dialo = new String[1];
-            dialo[0] = "  Mr. Candy was right...";
+            dialo[0] = "  Miss. Candy was right...";
             pages[31] = new Page(true, 1, R.drawable.episode_classroom, R.drawable.episode_nervousboy,
                     dialo, new Choice("NEXT", 32), new Choice("NEXT", 32), false);
 
 
             dialo = new String[1];
-            dialo[0] = "  I should have listened to him....";
+            dialo[0] = "  I should have listened to her....";
             pages[32] = new Page(true, 1, R.drawable.episode_classroom, R.drawable.episode_nervousboy,
                     dialo, new Choice("NEXT", 0), new Choice("NEXT", 0), true);
 
@@ -268,7 +268,7 @@ public class Story {
 
 
             dialo = new String[1];
-            dialo[0] = "  I think Mr. Candy is right!!!";
+            dialo[0] = "  I think Miss. Candy is right!!!";
             pages[33] = new Page(true, 1, R.drawable.episode_school, R.drawable.episode_thinkingboy,
                     dialo, new Choice("NEXT", 34), new Choice("NEXT", 34), false);
 
@@ -292,7 +292,7 @@ public class Story {
 
 
             dialo = new String[1];
-            dialo[0] = "Thank you Mr. Candy...";
+            dialo[0] = "Thank you Miss. Candy...";
             pages[37] = new Page(true, 1, R.drawable.episode_classroom, R.drawable.episode_happyboy,
                     dialo, new Choice("NEXT", 0), new Choice("NEXT", 0), true);
 
@@ -329,7 +329,7 @@ public class Story {
 
 
             dialo = new String[1];
-            dialo[0] = "  Thank you Mr. Candy...!!!";
+            dialo[0] = "  Thank you Miss. Candy...!!!";
             pages[42] = new Page(true, 1, R.drawable.episode_school, R.drawable.episode_happyboy2,
                     dialo, new Choice("NEXT", 0), new Choice("NEXT", 0), true);
 
