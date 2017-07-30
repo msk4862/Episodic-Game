@@ -71,10 +71,12 @@ public class StoryActivity extends AppCompatActivity{
 
         t = Typeface.createFromAsset(getAssets(), "raleway.ttf");
 
-        lessons = new String[3];
+        lessons = new String[4];
         lessons[0]="Lesson Learnt: Be clean! Be healthy!";
         lessons[1]="Lesson Learnt: Always choose wisely";
         lessons[2]="Lesson Learnt: Honesty is the best policy";
+        lessons[3]="Lesson Learnt: Prefer even to fail with honor than to win by cheating";
+
 
         choice1Button = (Button) findViewById(R.id.choice1Button);
         choice2Button = (Button) findViewById((R.id.choice2Button));
@@ -207,6 +209,12 @@ public class StoryActivity extends AppCompatActivity{
     private void loadButtons(final Page page) {
 
 
+        int nextPage = page.getChoice2().getNextPage();
+        if (nextPage==31 || nextPage==32) {
+            lesson.setVisibility(View.VISIBLE);
+            lesson.setText(lessons[3]);
+        }
+
         if (diaCount<pageText.length) {
             choice1Button.setVisibility(View.INVISIBLE);
             choice2Button.setText("NEXT");
@@ -256,6 +264,7 @@ public class StoryActivity extends AppCompatActivity{
                         if (nextPage==33) {
                             lesson.setText(lessons[2]);
                         }
+
                         loadPage(nextPage);
                     }
                 });
@@ -266,6 +275,7 @@ public class StoryActivity extends AppCompatActivity{
                     @Override
                     public void onClick(View v) {
                         int nextPage = page.getChoice2().getNextPage();
+
                         loadPage(nextPage);
                     }
                 });
@@ -344,12 +354,14 @@ public class StoryActivity extends AppCompatActivity{
     public void callEndActivity() {
 
         // i.putExtra("score", score);
+        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.getApplicationContext().startActivity(i);
     }
 
     public void callPlayAgainActivity() {
 
         // i.putExtra("score", score);
+        i1.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.getApplicationContext().startActivity(i1);
     }
 
