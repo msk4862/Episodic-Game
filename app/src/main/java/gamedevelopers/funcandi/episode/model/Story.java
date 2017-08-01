@@ -18,7 +18,7 @@ public class Story {
 
 
     // set this to true for analysis part
-    public boolean analysis=false;
+    public boolean analysis=true;
 
     Context context;
 
