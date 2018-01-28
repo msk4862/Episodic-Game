@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/episode_school"
+    android:background="@drawable/school"
     tools:context="gamedevelopers.funcandi.episode.PlayAgainActivity">
 
     <Button
@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Play Again"
-        android:textColor="#000"
+        android:textColor="#fff"
         android:padding="8dp"
         android:background="@drawable/episode_button"
         android:layout_marginBottom="78dp"
@@ -22,19 +22,20 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="51dp"
         android:textSize="30sp"
         android:text="You are learning a lot!!!"
-        android:layout_above="@+id/button3"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="43dp" />
 
     <Button
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/button3"
         android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="17dp"
+        android:textColor="#fff"
         android:background="@drawable/episode_button"
         android:text="Exit" />
 </RelativeLayout>

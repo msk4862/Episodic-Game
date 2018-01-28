@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/episode_school"
+    android:background="@drawable/school"
     tools:context="gamedevelopers.funcandi.episode.LaunchActivity">
 
 
@@ -13,36 +13,44 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="A"
-        android:textSize="15sp"/>
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="30dp"
+        android:text="School Mates"
+        android:textSize="40sp"/>
 
-    <TextView
+    <!--<TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/textView3"
-        android:text="Day"
-        android:textSize="20sp"
+        android:text="a"
+        android:layout_marginTop="5dp"
+        android:textSize="35sp"
         />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:text="Friend"
+        android:textSize="40sp"
         android:layout_below="@+id/textView4"
-        android:text="To"
-        android:textSize="25sp"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp" />-->
 
+<!--
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:text=""
+        android:textSize="30sp"
         android:layout_below="@+id/textView5"
-        android:text="School"
-        android:textSize="30sp"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp" />
+-->
+
 
     <Button
         android:id="@+id/button2"
@@ -50,8 +58,9 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/episode_button"
-        android:textColor="#000"
+        android:textColor="#fff"
         android:text="Play" />
 
 </RelativeLayout>

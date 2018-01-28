@@ -49,7 +49,8 @@
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toTopOf="@id/choice1Button"
             android:textSize="15sp"
-            android:padding="20dp"/>
+            android:padding="20dp"
+            android:paddingStart="23dp"/>
 
     <TextView
         android:id="@+id/textView2"
