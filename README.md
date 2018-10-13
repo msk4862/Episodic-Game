@@ -1,5 +1,5 @@
 # Episodic-Game
-An android game where you can choose your own adventure.
+An android game where you can choose your own adventure story.
 
 Here are some gameplay screenshots:
 
