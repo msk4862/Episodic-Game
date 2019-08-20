@@ -7,4 +7,6 @@ Here are some gameplay screenshots:
 
 <img src="https://user-images.githubusercontent.com/24875366/46435452-f9bed600-c773-11e8-889f-2e8def548947.jpeg" width="250" height="400" />
 
+# Download Game
 
+ [Play Store Link](https://play.google.com/store/apps/details?id=gamedevelopers.funcandi.episode)
